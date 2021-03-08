@@ -4,19 +4,18 @@ platform: "linux"
 version: "v0.0.1"
 section: "default"
 priority: "extra"
-maintainer: "morerv"
+maintainer: "djinn"
 description: |
   Modules installed:
     - geoip2
     - vts
     - aws auth
     - headers-more
-    - vod
 vendor: "Nginx Inc."
 homepage: "https://gitlab.ctcmedia.ru/devops/packages/nginx"
 license: "MIT"
 rpm:
-  group: "M3" 
+  group: "djinn" 
   summary: "Nginx-1.18.0 with custom modules"
   compression: lzma
 overrides:
