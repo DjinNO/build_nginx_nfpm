@@ -1,0 +1,42 @@
+name: "nginx"
+arch: "amd64"
+platform: "linux"
+version: "v0.0.1"
+section: "default"
+priority: "extra"
+maintainer: "morerv"
+description: |
+  Modules installed:
+    - geoip2
+    - vts
+    - aws auth
+    - headers-more
+    - vod
+vendor: "Nginx Inc."
+homepage: "https://gitlab.ctcmedia.ru/devops/packages/nginx"
+license: "MIT"
+rpm:
+  group: "M3" 
+  summary: "Nginx-1.18.0 with custom modules"
+  compression: lzma
+overrides:
+  rpm:
+    scripts:
+      preinstall: ./scripts/preinstal.sh
+      postinstall: ./scripts/postinstall.sh
+      postremove: ./scripts/postremove.sh
+contents:
+  - src: /tmp/installdir/etc/nginx
+    dst: /etc/nginx
+  - src: ./files/nginx.conf
+    dst: /etc/nginx/nginx.conf
+    type: config
+  - src: /tmp/installdir/usr/lib64/nginx/modules
+    dst: /usr/lib64/nginx/modules
+  - src: /tmp/installdir/usr/sbin/nginx
+    dst: /usr/sbin/nginx
+  - src: ./files/nginx.service
+    dst: /etc/systemd/system/nginx.service
+empty_folders:
+  - /var/log/nginx
+  - /etc/nginx/logs
