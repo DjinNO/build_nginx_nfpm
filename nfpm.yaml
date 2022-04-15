@@ -12,7 +12,7 @@ description: |
     - aws auth
     - headers-more
 vendor: "Nginx Inc."
-homepage: "https://gitlab.ctcmedia.ru/devops/packages/nginx"
+homepage: "https://.com"
 license: "MIT"
 rpm:
   group: "djinn" 
